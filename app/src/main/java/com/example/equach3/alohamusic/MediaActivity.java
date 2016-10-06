@@ -24,6 +24,6 @@ public class MediaActivity extends AppCompatActivity {
 
         hulaVideoView = (VideoView) findViewById(R.id.hulaVideoView);
 
-        
+
     }
 }
