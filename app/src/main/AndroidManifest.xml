@@ -15,7 +15,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MediaActivity"></activity>
+        <activity android:name=".MediaActivity" />
+        <activity
+            android:name=".VideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_video"
+            android:parentActivityName=".MediaActivity"
+            android:theme="@style/FullscreenTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.equach3.alohamusic.MediaActivity" />
+        </activity>
     </application>
 
 </manifest>

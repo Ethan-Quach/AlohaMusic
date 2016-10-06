@@ -14,42 +14,45 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:srcCompat="@drawable/ukulele"
-        android:id="@+id/ukeleleImageView"
+        android:id="@+id/ukuleleImageView"
         android:layout_weight="2"
         android:contentDescription="@string/ukulele_image_alt_text" />
 
     <Button
-        android:text="Button"
+        android:text="@string/ukulele_button_play_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ukeleleButton" />
+        android:id="@+id/ukuleleButton"
+        android:onClick="playMedia" />
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:srcCompat="@drawable/ipu"
         android:id="@+id/ipuImageView"
         android:layout_weight="2"
         android:contentDescription="@string/ipu_image_alt_text" />
 
     <Button
-        android:text="Button"
+        android:text="@string/ipu_button_play_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/ipuButton" />
+        android:id="@+id/ipuButton"
+        android:onClick="playMedia" />
 
     <VideoView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:id="@+id/hulaVideoView"
-        android:layout_weight="3"
+        android:layout_weight="2"
         android:contentDescription="@string/hula_image_alt_text" />
 
     <Button
-        android:text="Button"
+        android:text="@string/hula_button_watch_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/hulaButton" />
+        android:id="@+id/hulaButton"
+        android:onClick="playMedia" />
 </LinearLayout>

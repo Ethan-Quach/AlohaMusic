@@ -10,4 +10,8 @@
     <string name="ipu_button_pause_text">Pause Ipu Song</string>
     <string name="hula_button_watch_text">Watch Hula Video</string>
     <string name="hula_button_pause_text">Pause Hula Video</string>
+
+    <string name="title_activity_video">VideoActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
