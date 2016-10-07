@@ -1,12 +1,12 @@
 package com.example.equach3.alohamusic;
 
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class MediaActivity extends AppCompatActivity {
@@ -29,14 +29,15 @@ public class MediaActivity extends AppCompatActivity {
         ipuButton = (Button) findViewById(R.id.ipuButton);
         hulaButton = (Button) findViewById(R.id.hulaButton);
 
-        hulaVideoView = (VideoView) findViewById(R.id.hulaVideoView);
-        hulaVideoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.hula));
-        hulaVideoView.setMediaController(new MediaController(this));
-
         // Associating media player object with the raw audio files
 
         ukuleleMP = MediaPlayer.create(this, R.raw.ukulele);
         ipuMP = MediaPlayer.create(this, R.raw.ipu);
+    }
+
+    public void onConfigurationChanged(Configuration newConfig) {
+        // Ignoring orientation and keyboard change
+        super.onConfigurationChanged(newConfig);
     }
 
     public void playMedia(View view) {
@@ -84,21 +85,12 @@ public class MediaActivity extends AppCompatActivity {
                 break;
 
             case R.id.hulaButton:
-                if (hulaVideoView.isPlaying())
                 {
-                    hulaVideoView.pause();
-                    hulaButton.setText(R.string.hula_button_watch_text);
-
-                    ukuleleButton.setVisibility(View.VISIBLE);
-                    ipuButton.setVisibility(View.VISIBLE);
-                }
-                else
-                {
-                    hulaVideoView.start();
-                    hulaButton.setText(R.string.hula_button_pause_text);
-
-                    ukuleleButton.setVisibility(View.INVISIBLE);
-                    ipuButton.setVisibility(View.INVISIBLE);
+                    // Creating new Intent to start VideoActivity
+                    Intent videoIntent = new Intent(this, VideoActivity.class);
+                    String uri = "android.resource://" + getPackageName() + "/" + R.raw.hula;
+                    videoIntent.putExtra("URI", uri);
+                    startActivity(videoIntent);
                 }
                 break;
         }

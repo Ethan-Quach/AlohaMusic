@@ -42,12 +42,12 @@
         android:id="@+id/ipuButton"
         android:onClick="playMedia" />
 
-    <VideoView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:id="@+id/hulaVideoView"
-        android:layout_weight="2"
-        android:contentDescription="@string/hula_image_alt_text" />
+        app:srcCompat="@drawable/hula_image"
+        android:id="@+id/hulaImageView"
+        android:layout_weight="2" />
 
     <Button
         android:text="@string/hula_button_watch_text"
